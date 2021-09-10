@@ -10,9 +10,9 @@ import { BaseOptionChart } from '../../charts';
 // ----------------------------------------------------------------------
 
 
-export default function AppConversionRates({data: data}) {
+export default function AppConversionDeaths({data: data}) {
 
-  const CHART_DATA = [{ data: data?.states.map(e => e.confirmedCases) }];
+  const CHART_DATA = [{ data: data?.states.map(e => e.death) }];
 
 
   const chartOptions = merge(BaseOptionChart(), {
@@ -36,7 +36,7 @@ export default function AppConversionRates({data: data}) {
 
   return (
     <Card>
-      <CardHeader title="Conversion Confirmed Cases" subheader="(+43%) than last year" />
+      <CardHeader title="Conversion Deaths" subheader="(+43%) than last year" />
       <Box sx={{ mx: 3 }} dir="ltr">
         <ReactApexChart type="bar" series={CHART_DATA} options={chartOptions} height={564} />
       </Box>
